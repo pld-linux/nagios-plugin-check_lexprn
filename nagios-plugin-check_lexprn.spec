@@ -4,7 +4,7 @@ Summary:	Nagios Plugin for checking the status of Lexmark printers
 Summary(pl.UTF-8):	Wtyczka Nagiosa do sprawdzania stanu drukarek Lexmark
 Name:		nagios-plugin-check_lexprn
 Version:	0.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Networking
 Source0:	http://www.universalnet.at/projects/check_lexprn/%{plugin}-%{version}.tar.gz
@@ -12,7 +12,7 @@ Source0:	http://www.universalnet.at/projects/check_lexprn/%{plugin}-%{version}.t
 Source1:	%{plugin}.conf
 URL:		http://www.universalnet.at/
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	nagios-core
+Requires:	nagios-common
 Requires:	nagios-plugins-libs
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,5 +44,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc INSTALL.TXT
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{plugin}.cfg
+%attr(640,root,nagios) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{plugin}.cfg
 %attr(755,root,root) %{_plugindir}/%{plugin}
