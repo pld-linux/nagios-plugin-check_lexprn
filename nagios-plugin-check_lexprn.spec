@@ -19,8 +19,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir	%{_prefix}/lib/nagios/plugins
 %define		_sysconfdir	/etc/nagios/plugins
-%define         _noautoreq      'perl(utils)'
-
+%define		_noautoreq	'perl(utils)'
 
 %description
 check_lexprn is a Nagios plugin that can be used to monitor the status
@@ -36,7 +35,7 @@ Lexmark.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_plugindir}}
-install %{plugin} $RPM_BUILD_ROOT%{_plugindir}
+install -p %{plugin} $RPM_BUILD_ROOT%{_plugindir}
 sed -e 's,@plugindir@,%{plugindir},' %{SOURCE1} > $RPM_BUILD_ROOT%{_sysconfdir}/%{plugin}.cfg
 
 %clean
