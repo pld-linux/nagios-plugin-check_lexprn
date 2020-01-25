@@ -1,5 +1,4 @@
 %define		plugin check_lexprn
-%include	/usr/lib/rpm/macros.perl
 Summary:	Nagios Plugin for checking the status of Lexmark printers
 Summary(pl.UTF-8):	Wtyczka Nagiosa do sprawdzania stanu drukarek Lexmark
 Name:		nagios-plugin-check_lexprn
